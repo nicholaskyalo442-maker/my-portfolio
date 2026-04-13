@@ -180,3 +180,74 @@ nav a:hover::after {
     box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
   }
   }
+/* =========================
+   ELITE UI IMPROVEMENTS
+========================= */
+
+/* Smooth global scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Background upgrade (subtle gradient glow) */
+body {
+  background: radial-gradient(circle at top, #111827, #0f172a 60%);
+}
+
+/* ===== HERO TEXT EFFECT ===== */
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s infinite linear;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+/* ===== FLOATING CARD EFFECT ===== */
+.card {
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+}
+
+/* Lift + glow on hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(59,130,246,0.2);
+}
+
+/* ===== BUTTON PREMIUM STYLE ===== */
+.card a {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  border: none;
+  font-weight: 500;
+}
+
+.card a:hover {
+  filter: brightness(1.2);
+  transform: scale(1.07);
+}
+
+/* ===== SECTION FADE IN ON SCROLL ===== */
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  }
