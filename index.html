@@ -14,6 +14,8 @@
 
   <link rel="stylesheet" href="styles.css">
 
+  <link rel="icon" href="profile.jpg">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph -->
@@ -22,28 +24,13 @@
   <meta property="og:url" content="https://nicholaskyalo442-maker.github.io/my-portfolio/">
   <meta property="og:type" content="website">
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Nicholas Kyalo",
-    "jobTitle": "Actuarial Science Student",
-    "url": "https://nicholaskyalo442-maker.github.io/my-portfolio/",
-    "sameAs": [
-      "https://x.com/Delgadohnick",
-      "https://www.instagram.com/delgadoh_nicky"
-    ]
-  }
-  </script>
-
 </head>
 
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="index.html">Home</a>
+  <a href="index.html" class="active">Home</a>
   <a href="about.html">About</a>
   <a href="projects.html">Projects</a>
   <a href="creative.html">Creative</a>
@@ -57,7 +44,11 @@
 
     <h1>Nicholas Kyalo</h1>
 
-    <h2>Actuarial Science | Data | Risk Analysis</h2>
+    <h2 id="typing"></h2>
+
+    <p style="margin-top:10px; font-style:italic; color:#94a3b8;">
+      Turning data into insight, and insight into decisions.
+    </p>
 
     <p>
       Actuarial Science student at Machakos University specializing in statistics,
@@ -69,32 +60,102 @@
 
   </div>
 
-  <!-- SECTIONS -->
+  <!-- SKILLS -->
+  <div class="card">
+    <h3>Skills</h3>
+    <p>
+      • Statistical Analysis <br>
+      • Financial Mathematics <br>
+      • Risk Modeling <br>
+      • Data Analysis (Excel, R) <br>
+      • Problem Solving & Critical Thinking
+    </p>
+  </div>
 
+  <!-- PROJECTS -->
   <div class="card">
     <h3>Projects</h3>
-    <p>Explore academic and analytical projects in actuarial science and data analysis.</p>
-    <a href="projects.html">Open Projects</a>
+    <p>
+      Practical projects in actuarial science, statistics, and data analysis using tools such as Excel, R, and statistical modeling techniques.
+    </p>
+    <a href="projects.html">Explore Projects</a>
   </div>
 
+  <!-- CREATIVE -->
   <div class="card">
     <h3>Creative Works</h3>
-    <p>Written plays (Season 1 & 2) and storytelling projects.</p>
-    <a href="creative.html">Open Creative Works</a>
+    <p>
+      A series of original written plays exploring themes of life, society, and human experiences across multiple seasons.
+    </p>
+    <a href="creative.html">Explore Creative Works</a>
   </div>
 
+  <!-- CV -->
   <div class="card">
     <h3>CV</h3>
-    <p>View academic background, skills, and leadership experience.</p>
+    <p>View academic background, skills, leadership roles, and professional experience.</p>
     <a href="cv.html">Open CV</a>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="card" style="text-align:center;">
+    <h3>Let’s Connect</h3>
+    <p>
+      Open to internships, collaborations, and opportunities in actuarial science,
+      data analysis, and risk modeling.
+    </p>
+
+    <a href="mailto:nicholaskyalo442@gmail.com">Email</a>
+    <a href="https://x.com/Delgadohnick" target="_blank">Twitter</a>
+    <a href="https://www.instagram.com/delgadoh_nicky" target="_blank">Instagram</a>
   </div>
 
 </div>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 Nicholas Kyalo | All Rights Reserved
+  © <span id="year"></span> Nicholas Kyalo | All Rights Reserved
 </footer>
 
+<!-- SCRIPTS -->
+
+<!-- Auto year -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Typing effect -->
+<script>
+const text = "Actuarial Science | Data | Risk Analysis";
+let i = 0;
+
+function typeEffect() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, 50);
+  }
+}
+typeEffect();
+</script>
+
+<!-- Scroll reveal -->
+<script>
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+});
+
+cards.forEach(card => {
+  observer.observe(card);
+});
+</script>
+
 </body>
-    </html>
+  </html>
