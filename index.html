@@ -6,24 +6,21 @@
 
   <title>Nicholas Kyalo | Actuarial Science Portfolio</title>
 
-  <meta name="description" content="Nicholas Kyalo is an Actuarial Science student in Kenya specializing in statistics, risk analysis, and financial mathematics.">
-
+  <meta name="description" content="Nicholas Kyalo is an Actuarial Science student specializing in risk modeling, financial analysis, and data-driven decision making.">
+  <meta name="keywords" content="Actuarial Science, Risk Analysis, Data Analysis, Financial Modeling, Kenya">
   <meta name="author" content="Nicholas Kyalo">
 
   <link rel="canonical" href="https://nicholaskyalo442-maker.github.io/my-portfolio/">
-
   <link rel="stylesheet" href="styles.css">
-
   <link rel="icon" href="profile.jpg">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Nicholas Kyalo | Portfolio">
-  <meta property="og:description" content="Actuarial Science student portfolio showcasing projects, creative works, and CV.">
+  <meta property="og:description" content="Actuarial Science portfolio showcasing risk modeling, data analysis, and financial projects.">
   <meta property="og:url" content="https://nicholaskyalo442-maker.github.io/my-portfolio/">
   <meta property="og:type" content="website">
-
 </head>
 
 <body>
@@ -37,38 +34,48 @@
   <a href="cv.html">CV</a>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- MAIN CONTAINER -->
 <div class="container">
 
+  <!-- HERO -->
   <div class="card" style="text-align:center; padding:60px;">
-
     <h1>Nicholas Kyalo</h1>
 
     <h2 id="typing"></h2>
 
     <p style="margin-top:10px; font-style:italic; color:#94a3b8;">
-      Turning data into insight, and insight into decisions.
+      I analyze risk, model uncertainty, and turn data into financially sound decisions.
     </p>
 
     <p>
-      Actuarial Science student at Machakos University specializing in statistics,
-      financial modeling, risk analysis, and data-driven decision making.
+      Actuarial Science student with a focus on risk modeling, financial analysis,
+      and data-driven decision making. Skilled in applying statistical methods to
+      solve real-world financial and insurance problems.
     </p>
 
-    <a href="projects.html">View Projects</a>
-    <a href="cv.html">View CV</a>
-
+    <div style="margin-top:20px;">
+      <a href="projects.html">View Projects</a>
+      <a href="cv.html" style="margin-left:10px;">View CV</a>
+    </div>
   </div>
 
-  <!-- SKILLS -->
+  <!-- CORE COMPETENCIES -->
   <div class="card">
-    <h3>Skills</h3>
+    <h3>Core Competencies</h3>
     <p>
-      • Statistical Analysis <br>
-      • Financial Mathematics <br>
-      • Risk Modeling <br>
-      • Data Analysis (Excel, R) <br>
-      • Problem Solving & Critical Thinking
+      <strong>Risk & Actuarial:</strong> Risk Modeling, Probability Theory, Financial Mathematics<br>
+      <strong>Data & Tools:</strong> Excel, R, Data Analysis, Statistical Modeling<br>
+      <strong>Professional:</strong> Problem Solving, Critical Thinking, Leadership & Coordination
+    </p>
+  </div>
+
+  <!-- FEATURED PROJECT -->
+  <div class="card">
+    <h3>Featured Project: Risk Analysis Model</h3>
+    <p>
+      Developed a statistical model analyzing probability distributions of risk events
+      and their financial impact using Excel. The project demonstrates the application
+      of actuarial concepts in real-world risk evaluation.
     </p>
   </div>
 
@@ -76,16 +83,28 @@
   <div class="card">
     <h3>Projects</h3>
     <p>
-      Practical projects in actuarial science, statistics, and data analysis using tools such as Excel, R, and statistical modeling techniques.
+      Includes actuarial-focused projects such as risk analysis models,
+      financial simulations, and statistical data analysis using Excel and R.
     </p>
     <a href="projects.html">Explore Projects</a>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <div class="card">
+    <h3>Leadership & Experience</h3>
+    <p>
+      Class Representative (Actuarial Science Year 2), Organising Secretary of the
+      Actuarial Science Association, and Theatre Ministry Secretary. Experienced in
+      leadership, coordination, and team management.
+    </p>
   </div>
 
   <!-- CREATIVE -->
   <div class="card">
     <h3>Creative Works</h3>
     <p>
-      A series of original written plays exploring themes of life, society, and human experiences across multiple seasons.
+      A collection of original written plays exploring themes of life, society,
+      and human experiences—demonstrating creativity, communication, and storytelling.
     </p>
     <a href="creative.html">Explore Creative Works</a>
   </div>
@@ -93,7 +112,10 @@
   <!-- CV -->
   <div class="card">
     <h3>CV</h3>
-    <p>View academic background, skills, leadership roles, and professional experience.</p>
+    <p>
+      View academic background, technical skills, leadership experience,
+      and professional development.
+    </p>
     <a href="cv.html">Open CV</a>
   </div>
 
@@ -101,8 +123,9 @@
   <div class="card" style="text-align:center;">
     <h3>Let’s Connect</h3>
     <p>
-      Open to internships, collaborations, and opportunities in actuarial science,
-      data analysis, and risk modeling.
+      Currently seeking internship opportunities in actuarial science,
+      data analysis, and risk management. Open to collaborations and
+      professional engagements.
     </p>
 
     <a href="mailto:nicholaskyalo442@gmail.com">Email</a>
@@ -126,7 +149,7 @@
 
 <!-- Typing effect -->
 <script>
-const text = "Actuarial Science | Data | Risk Analysis";
+const text = "Risk Modeling | Data Analysis | Financial Decision Making";
 let i = 0;
 
 function typeEffect() {
@@ -152,9 +175,7 @@ const observer = new IntersectionObserver(entries => {
   });
 });
 
-cards.forEach(card => {
-  observer.observe(card);
-});
+cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
