@@ -13,7 +13,7 @@ html {
 }
 
 /* =========================
-   CINEMATIC BACKGROUND
+   BODY + CINEMATIC BACKGROUND
 ========================= */
 body {
   background: radial-gradient(circle at 20% 10%, #1e3a8a 0%, transparent 40%),
@@ -28,7 +28,7 @@ body {
   overflow-x: hidden;
 }
 
-/* cinematic glow layer */
+/* glow layer (optimized) */
 body::before {
   content: "";
   position: fixed;
@@ -36,10 +36,10 @@ body::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(59,130,246,0.15), transparent 40%),
-              radial-gradient(circle, rgba(168,85,247,0.12), transparent 40%),
-              radial-gradient(circle, rgba(14,165,233,0.10), transparent 40%);
-  animation: floatGlow 18s linear infinite;
+  background: radial-gradient(circle, rgba(59,130,246,0.12), transparent 40%),
+              radial-gradient(circle, rgba(168,85,247,0.10), transparent 40%),
+              radial-gradient(circle, rgba(14,165,233,0.08), transparent 40%);
+  animation: floatGlow 30s linear infinite;
   pointer-events: none;
   z-index: -1;
 }
@@ -55,7 +55,7 @@ body::after {
   opacity: 0.04;
   pointer-events: none;
   background-image: url("https://www.transparenttextures.com/patterns/noise.png");
-  z-index: 1;
+  z-index: -1;
 }
 
 /* =========================
@@ -92,30 +92,8 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* active link */
-nav a.active {  justify-content: center;
-  gap: 20px;
-
-  padding: 14px 20px;
-
-  background: rgba(17, 24, 39, 0.6);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-nav a {
-  color: #e2e8f0;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 8px;
-  position: relative;
-  transition: 0.3s ease;
-}
-
-nav a:hover {
-  background: rgba(59,130,246,0.2);
-  transform: translateY(-2px);
+nav a.active {
+  background: rgba(59,130,246,0.25);
 }
 
 nav a::after {
@@ -143,19 +121,30 @@ nav a:hover::after {
 }
 
 /* =========================
-   HEADINGS
+   TYPOGRAPHY
 ========================= */
 h1 {
   font-size: 40px;
   font-weight: 700;
   background: linear-gradient(90deg, #60a5fa, #a78bfa, #60a5fa);
+  background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientMove 6s infinite linear;
+  animation: gradientMove 6s linear infinite;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #c7d2fe;
+}
+
+p {
+  color: #cbd5f5;
 }
 
 /* =========================
-   CARDS (ELITE STYLE)
+   CARDS (ELITE UI)
 ========================= */
 .card {
   background: rgba(17, 24, 39, 0.75);
@@ -176,7 +165,7 @@ h1 {
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 40px rgba(59,130,246,0.2);
 }
 
@@ -252,7 +241,19 @@ footer {
     flex-wrap: wrap;
   }
 
+  h1 {
+    font-size: 28px;
+  }
+
   .container {
     padding: 15px;
   }
+
+  .card {
+    padding: 16px;
   }
+
+  nav a {
+    padding: 10px;
+  }
+   }
