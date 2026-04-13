@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CV | Nicholas Kyalo</title>
+
+  <meta name="description" content="Curriculum Vitae of Nicholas Kyalo - Actuarial Science student in Kenya.">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="cv.html">CV</a>
+</nav>
+
+<div class="container">
+
+  <h2 class="section-title">Curriculum Vitae</h2>
+
+  <div class="card">
+    <h3>Personal Information</h3>
+    <p><strong>Name:</strong> Nicholas Kyalo</p>
+    <p><strong>Email:</strong> nicholaskyalo442@gmail.com</p>
+    <p><strong>Phone:</strong> 0724037192 (WhatsApp)</p>
+    <p><strong>Location:</strong> Kenya</p>
+  </div>
+
+  <div class="card">
+    <h3>Education</h3>
+    <p>BSc Actuarial Science</p>
+  </div>
+
+  <div class="card">
+    <h3>Skills</h3>
+    <p>Statistics, Probability, Financial Mathematics, Risk Modeling, Data Analysis</p>
+  </div>
+
+  <div class="card">
+    <h3>Career Objective</h3>
+    <p>
+      To become a professional actuary specializing in risk assessment and financial modeling
+      using mathematical and statistical techniques.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Nicholas Kyalo | CV Page
+</footer>
+
+</body>
+</html>
