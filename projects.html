@@ -6,7 +6,7 @@
 
   <title>Projects | Nicholas Kyalo</title>
 
-  <meta name="description" content="Nicholas Kyalo projects - Actuarial Science student in Kenya focused on risk modeling, statistics, and financial analysis.">
+  <meta name="description" content="Nicholas Kyalo actuarial science projects including risk modeling, financial analysis, and statistical simulations.">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -19,30 +19,119 @@
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
+  <a href="projects.html" class="active">Projects</a>
   <a href="cv.html">CV</a>
 </nav>
 
-<!-- CONTENT -->
+<!-- HERO SECTION -->
 <div class="container">
 
-  <h2 class="section-title">My Projects</h2>
+  <div class="card" style="text-align:center; padding:40px;">
 
-  <div class="card">
-    <h3>📊 Insurance Risk Model</h3>
-    <p>
-      A conceptual actuarial model used to analyze insurance risk using probability distributions and statistical methods.
+    <h1>Actuarial & Data Projects</h1>
+
+    <p style="color:#94a3b8;">
+      A collection of analytical projects focused on risk modeling, financial mathematics,
+      and data-driven decision making.
     </p>
+
   </div>
 
+  <!-- DASHBOARD PROJECT -->
   <div class="card">
+
+    <h3>📊 Actuarial Risk Dashboard</h3>
+
+    <img src="actuarial-dashboard.png" alt="Actuarial Dashboard" style="width:100%; border-radius:10px; margin:10px 0;">
+
+    <p>
+      Designed a full actuarial dashboard analyzing insurance premiums, claims, expenses,
+      and profitability trends over time. Includes loss ratio tracking and financial KPIs.
+    </p>
+
+    <p><strong>Key Metrics:</strong> Premiums | Claims | Profit | Loss Ratio</p>
+
+    <p><strong>Tools:</strong> Excel, Financial Modeling</p>
+
+  </div>
+
+  <!-- RISK MODEL -->
+  <div class="card">
+
+    <h3>📉 Insurance Risk Modeling</h3>
+
+    <img src="risk-model.png" alt="Risk Model Graph" style="width:100%; border-radius:10px; margin:10px 0;">
+
+    <p>
+      Developed a probabilistic model to evaluate insurance risk exposure using statistical distributions
+      and expected value theory. The model estimates potential financial loss under uncertainty.
+    </p>
+
+    <p><strong>Skills:</strong> Risk Analysis, Probability Theory, Statistical Modeling</p>
+
+    <p><strong>Tools:</strong> Excel</p>
+
+  </div>
+
+  <!-- FINANCIAL ANALYSIS -->
+  <div class="card">
+
     <h3>📈 Financial Data Analysis</h3>
+
+    <img src="financial-chart.png" alt="Financial Analysis Chart" style="width:100%; border-radius:10px; margin:10px 0;">
+
     <p>
-      Analysis of financial datasets to identify trends, patterns, and insights using Excel and statistical tools.
+      Conducted detailed financial data analysis to identify trends, patterns, and insights.
+      Applied statistical techniques to support data-driven financial decisions.
     </p>
+
+    <p><strong>Skills:</strong> Data Analysis, Visualization, Interpretation</p>
+
+    <p><strong>Tools:</strong> Excel, R</p>
+
   </div>
 
+  <!-- PROBABILITY SIMULATION -->
   <div class="card">
+
     <h3>🧮 Probability Simulations</h3>
+
+    <img src="probability-simulation.png" alt="Probability Simulation Graph" style="width:100%; border-radius:10px; margin:10px 0;">
+
     <p>
-      Simulated probability experiments to understand
+      Simulated probability experiments to analyze uncertainty and randomness in real-world scenarios.
+      Demonstrates understanding of stochastic processes and actuarial reasoning.
+    </p>
+
+    <p><strong>Skills:</strong> Probability, Simulation, Analytical Thinking</p>
+
+    <p><strong>Tools:</strong> Excel / R</p>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="card" style="text-align:center;">
+
+    <h3>Want to see more?</h3>
+
+    <p>
+      These projects represent my growing expertise in actuarial science and data analytics.
+    </p>
+
+    <a href="cv.html">View My CV</a>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © <span id="year"></span> Nicholas Kyalo | All Rights Reserved
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+  </html>
