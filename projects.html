@@ -4,59 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Projects Dashboard | Nicholas Kyalo</title>
+  <title>Projects | Nicholas Kyalo</title>
+
+  <meta name="description" content="Actuarial Science projects by Nicholas Kyalo including risk modeling, financial analysis, and statistical simulations.">
 
   <link rel="stylesheet" href="styles.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    .controls {
       display: flex;
-      background: radial-gradient(circle at top, #111827, #0f172a);
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      width: 220px;
-      background: #111827;
-      height: 100vh;
-      padding: 20px;
-      position: fixed;
-    }
-
-    .sidebar h2 {
-      color: #60a5fa;
-      margin-bottom: 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      color: #e2e8f0;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .sidebar a:hover {
-      background: #3b82f6;
-    }
-
-    /* MAIN */
-    .main {
-      margin-left: 240px;
-      padding: 20px;
-      width: 100%;
-    }
-
-    /* TOP BAR */
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
       margin-bottom: 20px;
     }
 
@@ -65,42 +25,12 @@
       border-radius: 8px;
       border: none;
       outline: none;
-      min-width: 200px;
+      width: 100%;
+      max-width: 300px;
     }
 
-    /* KPI CARDS */
-    .kpis {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .kpi {
-      background: #111827;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    .kpi h3 {
-      color: #60a5fa;
-    }
-
-    /* PROJECT GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-
-    .card {
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
+    .project {
+      transition: all 0.3s ease;
     }
 
     .hidden {
@@ -109,62 +39,52 @@
 
     .tag {
       display: inline-block;
+      padding: 4px 8px;
       background: #3b82f6;
-      padding: 3px 8px;
       border-radius: 6px;
       font-size: 12px;
+      margin-right: 5px;
       margin-top: 5px;
+    }
+
+    a {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: #2563eb;
+      transform: scale(1.05);
     }
   </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
-  <h2>Kyalo Dashboard</h2>
+<!-- NAV -->
+<nav>
   <a href="index.html">Home</a>
+  <a href="about.html">About</a>
   <a href="projects.html">Projects</a>
   <a href="cv.html">CV</a>
-</div>
+</nav>
 
-<!-- MAIN CONTENT -->
-<div class="main">
+<div class="container">
 
-  <!-- HEADER -->
-  <div class="card">
-    <h1>📊 Projects Dashboard</h1>
-    <p style="color:#94a3b8;">SaaS-style actuarial analytics workspace</p>
-  </div>
-
-  <!-- KPI SECTION -->
-  <div class="kpis">
-
-    <div class="kpi">
-      <h3>4</h3>
-      <p>Projects</p>
-    </div>
-
-    <div class="kpi">
-      <h3>Excel</h3>
-      <p>Main Tool</p>
-    </div>
-
-    <div class="kpi">
-      <h3>R</h3>
-      <p>Analytics</p>
-    </div>
-
-    <div class="kpi">
-      <h3>100%</h3>
-      <p>Learning Growth</p>
-    </div>
-
+  <div class="card" style="text-align:center;">
+    <h1>📊 Actuarial Projects Dashboard</h1>
+    <p style="color:#94a3b8;">Industry-level portfolio with reports, analytics, and code.</p>
   </div>
 
   <!-- CONTROLS -->
-  <div class="topbar">
-
+  <div class="controls">
     <input type="text" id="search" placeholder="Search projects...">
 
     <select id="filter">
@@ -174,37 +94,99 @@
       <option value="stats">Statistics</option>
       <option value="finance">Finance</option>
     </select>
-
   </div>
 
-  <!-- PROJECT GRID -->
-  <div class="grid">
+  <!-- PROJECT 1 -->
+  <div class="card project" data-tags="excel finance stats">
+    <h3>📊 Actuarial Risk Dashboard</h3>
 
-    <div class="card project" data-tags="excel finance stats">
-      <h3>📊 Risk Dashboard</h3>
-      <span class="tag">Excel</span>
-      <p>Insurance claims vs premiums analytics dashboard.</p>
-    </div>
+    <span class="tag">Excel</span>
+    <span class="tag">Finance</span>
 
-    <div class="card project" data-tags="stats">
-      <h3>📉 Risk Model</h3>
-      <span class="tag">Statistics</span>
-      <p>Probability-based insurance risk model.</p>
-    </div>
+    <p>
+      Built an actuarial dashboard analyzing premiums, claims, expenses, and profitability trends.
+      Demonstrates core insurance risk evaluation.
+    </p>
 
-    <div class="card project" data-tags="excel r finance">
-      <h3>📈 Financial Analysis</h3>
-      <span class="tag">Excel</span>
-      <span class="tag">R</span>
-      <p>Financial dataset trends and insights.</p>
-    </div>
+    <p><strong>Key Work:</strong></p>
+    <ul>
+      <li>Loss ratio analysis (Claims ÷ Premiums)</li>
+      <li>Profitability trend evaluation</li>
+      <li>KPI financial reporting</li>
+    </ul>
 
-    <div class="card project" data-tags="r stats">
-      <h3>🧮 Probability Simulation</h3>
-      <span class="tag">R</span>
-      <p>Simulation of random actuarial events.</p>
-    </div>
+    <p><strong>Outcome:</strong> Strong understanding of insurance performance.</p>
 
+    <a href="risk-dashboard.pdf" target="_blank">📄 Report</a>
+    <a href="https://github.com/yourusername/risk-dashboard" target="_blank">💻 Code</a>
+  </div>
+
+  <!-- PROJECT 2 -->
+  <div class="card project" data-tags="stats">
+    <h3>📉 Insurance Risk Model</h3>
+
+    <span class="tag">Statistics</span>
+
+    <p>
+      Probabilistic model for estimating insurance risk using distributions and expected value theory.
+    </p>
+
+    <ul>
+      <li>Modeled claim probabilities</li>
+      <li>Computed expected losses</li>
+      <li>Analyzed uncertainty patterns</li>
+    </ul>
+
+    <p><strong>Outcome:</strong> Strong actuarial risk modeling foundation.</p>
+
+    <a href="risk-model.pdf">📄 Report</a>
+    <a href="https://github.com/yourusername/risk-model">💻 Code</a>
+  </div>
+
+  <!-- PROJECT 3 -->
+  <div class="card project" data-tags="excel r finance">
+    <h3>📈 Financial Data Analysis</h3>
+
+    <span class="tag">Excel</span>
+    <span class="tag">R</span>
+
+    <p>
+      Financial dataset analysis to identify trends, patterns, and insights.
+    </p>
+
+    <ul>
+      <li>Data cleaning and structuring</li>
+      <li>Trend visualization</li>
+      <li>Statistical interpretation</li>
+    </ul>
+
+    <p><strong>Outcome:</strong> Improved financial decision-making skills.</p>
+
+    <a href="financial-analysis.pdf">📄 Report</a>
+    <a href="https://github.com/yourusername/financial-analysis">💻 Code</a>
+  </div>
+
+  <!-- PROJECT 4 -->
+  <div class="card project" data-tags="r stats">
+    <h3>🧮 Probability Simulations</h3>
+
+    <span class="tag">R</span>
+    <span class="tag">Statistics</span>
+
+    <p>
+      Simulated random events to model uncertainty and actuarial risk behavior.
+    </p>
+
+    <ul>
+      <li>Probability distribution simulation</li>
+      <li>Random event modeling</li>
+      <li>Risk behavior analysis</li>
+    </ul>
+
+    <p><strong>Outcome:</strong> Strong stochastic modeling understanding.</p>
+
+    <a href="probability-simulation.pdf">📄 Report</a>
+    <a href="https://github.com/yourusername/probability-sim">💻 Code</a>
   </div>
 
 </div>
@@ -235,4 +217,4 @@ filter.addEventListener("change", update);
 </script>
 
 </body>
-  </html>
+    </html>
