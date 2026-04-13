@@ -1,9 +1,16 @@
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { 
-  getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc 
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+  updateDoc
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
+/* CONFIG */
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
   authDomain: "YOUR_PROJECT.firebaseapp.com",
@@ -16,84 +23,108 @@ const db = getFirestore(app);
 
 let editId = null;
 
-/* ADD OR UPDATE PROJECT */
+/* SAVE (ADD OR UPDATE) */
 window.saveProject = async function () {
+  const title = document.getElementById("title").value.trim();
+  const desc = document.getElementById("desc").value.trim();
 
-  const title = document.getElementById("title").value;
-  const desc = document.getElementById("desc").value;
-
-  if (editId) {
-    // UPDATE EXISTING PROJECT
-    await updateDoc(doc(db, "projects", editId), {
-      title: title,
-      description: desc
-    });
-
-    alert("Project Updated!");
-    editId = null;
-
-  } else {
-    // CREATE NEW PROJECT
-    await addDoc(collection(db, "projects"), {
-      title: title,
-      description: desc,
-      createdAt: new Date()
-    });
-
-    alert("Project Added!");
+  if (!title || !desc) {
+    alert("Both fields are required");
+    return;
   }
 
-  document.getElementById("title").value = "";
-  document.getElementById("desc").value = "";
+  try {
+    if (editId) {
+      await updateDoc(doc(db, "projects", editId), {
+        title,
+        description: desc
+      });
 
-  loadProjects();
-}
+      alert("Project Updated ✅");
+      editId = null;
+
+    } else {
+      await addDoc(collection(db, "projects"), {
+        title,
+        description: desc,
+        createdAt: new Date()
+      });
+
+      alert("Project Added 🚀");
+    }
+
+    document.getElementById("title").value = "";
+    document.getElementById("desc").value = "";
+
+    loadProjects();
+
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
+};
 
 /* LOAD PROJECTS */
 async function loadProjects() {
-  const snap = await getDocs(collection(db, "projects"));
+  try {
+    const snap = await getDocs(collection(db, "projects"));
 
-  const list = document.getElementById("list");
-  list.innerHTML = "";
+    const list = document.getElementById("list");
+    list.innerHTML = "";
 
-  snap.forEach((d) => {
-    const data = d.data();
+    snap.forEach((d) => {
+      const data = d.data();
 
-    const div = document.createElement("div");
-    div.className = "project";
+      const div = document.createElement("div");
+      div.className = "project";
 
-    div.innerHTML = `
-      <h4>${data.title}</h4>
-      <p>${data.description}</p>
+      // safer DOM approach (NO inline JS injection)
+      const titleEl = document.createElement("h4");
+      titleEl.textContent = data.title;
 
-      <button onclick="editProject('${d.id}', '${data.title}', \`${data.description}\`)">
-        Edit
-      </button>
+      const descEl = document.createElement("p");
+      descEl.textContent = data.description;
 
-      <button class="delete" onclick="deleteProject('${d.id}')">
-        Delete
-      </button>
-    `;
+      const editBtn = document.createElement("button");
+      editBtn.textContent = "Edit";
+      editBtn.onclick = () => editProject(d.id, data.title, data.description);
 
-    list.appendChild(div);
-  });
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Delete";
+      delBtn.onclick = () => deleteProject(d.id);
+
+      div.appendChild(titleEl);
+      div.appendChild(descEl);
+      div.appendChild(editBtn);
+      div.appendChild(delBtn);
+
+      list.appendChild(div);
+    });
+
+  } catch (error) {
+    alert("Failed to load projects: " + error.message);
+  }
 }
 
-/* EDIT PROJECT (LOAD INTO FORM) */
-window.editProject = function(id, title, description) {
+/* EDIT */
+window.editProject = function (id, title, description) {
   document.getElementById("title").value = title;
   document.getElementById("desc").value = description;
 
   editId = id;
 
   window.scrollTo({ top: 0, behavior: "smooth" });
-}
+};
 
-/* DELETE PROJECT */
-window.deleteProject = async function(id) {
-  await deleteDoc(doc(db, "projects", id));
-  loadProjects();
-}
+/* DELETE */
+window.deleteProject = async function (id) {
+  try {
+    await deleteDoc(doc(db, "projects", id));
+    loadProjects();
+  } catch (error) {
+    alert("Delete failed: " + error.message);
+  }
+};
 
+/* INITIAL LOAD */
 loadProjects();
 </script>
