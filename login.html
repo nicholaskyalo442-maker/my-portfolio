@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Login</title>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
 </head>
 
 <body>
@@ -13,10 +11,19 @@
 <input type="email" id="email" placeholder="Email">
 <input type="password" id="password" placeholder="Password">
 
-<button onclick="login()">Login</button>
 <button onclick="signup()">Sign Up</button>
+<button onclick="login()">Login</button>
 
-<script>
+<script type="module">
+  // ✅ Import Firebase modules (MODERN WAY)
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
+  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+  // 🔧 Your Firebase config
   const firebaseConfig = {
     apiKey: "YOUR_API_KEY",
     authDomain: "YOUR_PROJECT.firebaseapp.com",
@@ -24,26 +31,47 @@
     appId: "YOUR_APP_ID"
   };
 
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
+  // 🚀 Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-  function signup() {
-    auth.createUserWithEmailAndPassword(
-      document.getElementById("email").value,
-      document.getElementById("password").value
-    ).then(() => {
-      alert("Account created!");
-    }).catch(err => alert(err.message));
-  }
+  // 🧠 SIGN UP FUNCTION
+  window.signup = function () {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
 
-  function login() {
-    auth.signInWithEmailAndPassword(
-      document.getElementById("email").value,
-      document.getElementById("password").value
-    ).then(() => {
-      window.location.href = "index.html";
-    }).catch(err => alert(err.message));
-  }
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        alert("Account created successfully 🚀");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  // 🔐 LOGIN FUNCTION
+  window.login = function () {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
 </script>
 
 </body>
