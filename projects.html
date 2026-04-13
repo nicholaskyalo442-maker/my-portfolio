@@ -7,13 +7,14 @@
   <title>Projects | Nicholas Kyalo</title>
 
   <meta name="description" content="Actuarial Science projects by Nicholas Kyalo including risk modeling, financial analysis, and statistical simulations.">
-
-  <meta name="keywords" content="Nicholas Kyalo, actuarial science projects, risk modeling, statistics, financial analysis, Excel, R">
+  <meta name="keywords" content="Actuarial Science, Risk Modeling, Data Analysis, Financial Modeling, Excel, R, Kenya">
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="profile.jpg">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Page-specific styles -->
   <style>
     .controls {
       display: flex;
@@ -49,7 +50,8 @@
       margin-top: 5px;
     }
 
-    a {
+    /* scoped buttons (avoid overriding global styles) */
+    .project a {
       display: inline-block;
       margin-right: 10px;
       margin-top: 10px;
@@ -61,7 +63,7 @@
       transition: 0.3s;
     }
 
-    a:hover {
+    .project a:hover {
       background: #2563eb;
       transform: scale(1.05);
     }
@@ -74,24 +76,25 @@
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
+  <a href="projects.html" class="active">Projects</a>
+  <a href="creative.html">Creative</a>
   <a href="cv.html">CV</a>
 </nav>
 
 <!-- MAIN -->
 <div class="container">
 
+  <!-- HEADER -->
   <div class="card" style="text-align:center;">
-    <h1>📊 Actuarial Projects Dashboard</h1>
+    <h1>Actuarial Projects Dashboard</h1>
     <p style="color:#94a3b8;">
-      Industry-level portfolio showcasing actuarial, statistical, and financial analysis projects.
+      A portfolio of actuarial, statistical, and financial modeling projects demonstrating applied risk analysis and data-driven decision making.
     </p>
   </div>
 
   <!-- CONTROLS -->
   <div class="controls">
     <input type="text" id="search" placeholder="Search projects...">
-
     <select id="filter">
       <option value="all">All Categories</option>
       <option value="excel">Excel</option>
@@ -103,94 +106,93 @@
 
   <!-- PROJECT 1 -->
   <div class="card project" data-tags="excel finance stats">
-    <h3>📊 Actuarial Risk Dashboard</h3>
+    <h3>Actuarial Risk Dashboard</h3>
 
     <span class="tag">Excel</span>
     <span class="tag">Finance</span>
 
     <p>
-      Built a full actuarial dashboard analyzing insurance premiums, claims, expenses, and profit trends.
-      Focused on risk evaluation and financial performance.
+      Built an actuarial dashboard analyzing insurance premiums, claims, expenses, and profitability trends to evaluate financial risk.
     </p>
 
     <ul>
       <li>Loss ratio analysis (Claims ÷ Premiums)</li>
-      <li>Profit trend tracking</li>
-      <li>KPI financial reporting</li>
+      <li>Profitability tracking</li>
+      <li>KPI-based financial reporting</li>
     </ul>
 
-    <p><strong>Outcome:</strong> Improved understanding of insurance risk dynamics.</p>
+    <p><strong>Outcome:</strong> Demonstrated ability to interpret insurance performance and risk exposure.</p>
 
-    <a href="risk-dashboard.pdf" target="_blank">📄 Report</a>
-    <a href="https://github.com/yourusername/risk-dashboard" target="_blank">💻 Code</a>
+    <a href="risk-dashboard.pdf" target="_blank">Report</a>
+    <a href="https://github.com/yourusername/risk-dashboard" target="_blank">Code</a>
   </div>
 
   <!-- PROJECT 2 -->
   <div class="card project" data-tags="stats">
-    <h3>📉 Insurance Risk Model</h3>
+    <h3>Insurance Risk Model</h3>
 
     <span class="tag">Statistics</span>
 
     <p>
-      Developed a probabilistic model to estimate insurance risk using distributions and expected value theory.
+      Developed a probabilistic model to estimate expected losses using statistical distributions and actuarial principles.
     </p>
 
     <ul>
       <li>Probability distribution modeling</li>
-      <li>Expected loss calculation</li>
+      <li>Expected loss computation</li>
       <li>Risk variability analysis</li>
     </ul>
 
-    <p><strong>Outcome:</strong> Strong foundation in actuarial modeling.</p>
+    <p><strong>Outcome:</strong> Strengthened actuarial modeling and quantitative reasoning skills.</p>
 
-    <a href="risk-model.pdf" target="_blank">📄 Report</a>
-    <a href="https://github.com/yourusername/risk-model" target="_blank">💻 Code</a>
+    <a href="risk-model.pdf" target="_blank">Report</a>
+    <a href="https://github.com/yourusername/risk-model" target="_blank">Code</a>
   </div>
 
   <!-- PROJECT 3 -->
   <div class="card project" data-tags="excel r finance">
-    <h3>📈 Financial Data Analysis</h3>
+    <h3>Financial Data Analysis</h3>
 
     <span class="tag">Excel</span>
     <span class="tag">R</span>
 
     <p>
-      Conducted financial dataset analysis to identify trends and insights for decision-making.
+      Analyzed financial datasets to identify trends, patterns, and actionable insights for decision-making.
     </p>
 
     <ul>
-      <li>Data cleaning and structuring</li>
+      <li>Data cleaning and transformation</li>
       <li>Trend visualization</li>
       <li>Statistical interpretation</li>
     </ul>
 
-    <p><strong>Outcome:</strong> Improved data-driven financial analysis skills.</p>
+    <p><strong>Outcome:</strong> Improved ability to extract insights from financial data.</p>
 
-    <a href="financial-analysis.pdf" target="_blank">📄 Report</a>
-    <a href="https://github.com/yourusername/financial-analysis" target="_blank">💻 Code</a>
+    <a href="financial-analysis.pdf" target="_blank">Report</a>
+    <a href="https://github.com/yourusername/financial-analysis" target="_blank">Code</a>
   </div>
 
   <!-- PROJECT 4 -->
   <div class="card project" data-tags="r stats">
-    <h3>🧮 Probability Simulations</h3>
+    <h3>Probability Simulations</h3>
 
     <span class="tag">R</span>
     <span class="tag">Statistics</span>
 
     <p>
-      Simulated random events to model uncertainty and actuarial risk behavior.
+      Simulated stochastic processes to model uncertainty and analyze actuarial risk behavior.
     </p>
 
     <ul>
-      <li>Stochastic simulation modeling</li>
-      <li>Random process analysis</li>
+      <li>Monte Carlo simulations</li>
+      <li>Random variable modeling</li>
       <li>Risk behavior interpretation</li>
     </ul>
 
-    <p><strong>Outcome:</strong> Strong understanding of probability systems.</p>
+    <p><strong>Outcome:</strong> Developed strong intuition for uncertainty and probabilistic systems.</p>
 
-    <a href="probability-simulation.pdf" target="_blank">📄 Report</a>
-    <a href="https://github.com/yourusername/probability-sim" target="_blank">💻 Code</a>
+    <a href="probability-simulation.pdf" target="_blank">Report</a>
+    <a href="https://github.com/yourusername/probability-sim" target="_blank">Code</a>
   </div>
 
 </div>
