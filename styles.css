@@ -28,7 +28,7 @@ body {
   overflow-x: hidden;
 }
 
-/* light cinematic motion layer */
+/* cinematic glow layer */
 body::before {
   content: "";
   position: fixed;
@@ -44,7 +44,7 @@ body::before {
   z-index: -1;
 }
 
-/* noise texture */
+/* subtle texture */
 body::after {
   content: "";
   position: fixed;
@@ -59,7 +59,7 @@ body::after {
 }
 
 /* =========================
-   NAVIGATION (GLASS)
+   NAVBAR (GLASS)
 ========================= */
 nav {
   position: sticky;
@@ -68,6 +68,32 @@ nav {
 
   display: flex;
   justify-content: center;
+  gap: 20px;
+
+  padding: 14px 20px;
+
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background: rgba(59,130,246,0.2);
+  transform: translateY(-2px);
+}
+
+/* active link */
+nav a.active {  justify-content: center;
   gap: 20px;
 
   padding: 14px 20px;
