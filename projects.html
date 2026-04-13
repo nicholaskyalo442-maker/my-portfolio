@@ -4,133 +4,234 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Projects | Nicholas Kyalo</title>
-
-  <meta name="description" content="Nicholas Kyalo actuarial science projects including risk modeling, financial analysis, and statistical simulations.">
+  <title>Projects Dashboard | Nicholas Kyalo</title>
 
   <link rel="stylesheet" href="styles.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      display: flex;
+      background: radial-gradient(circle at top, #111827, #0f172a);
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      background: #111827;
+      height: 100vh;
+      padding: 20px;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      color: #60a5fa;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #e2e8f0;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #3b82f6;
+    }
+
+    /* MAIN */
+    .main {
+      margin-left: 240px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      min-width: 200px;
+    }
+
+    /* KPI CARDS */
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .kpi {
+      background: #111827;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .kpi h3 {
+      color: #60a5fa;
+    }
+
+    /* PROJECT GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #3b82f6;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-<nav>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>Kyalo Dashboard</h2>
   <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html" class="active">Projects</a>
+  <a href="projects.html">Projects</a>
   <a href="cv.html">CV</a>
-</nav>
+</div>
 
-<!-- HERO SECTION -->
-<div class="container">
+<!-- MAIN CONTENT -->
+<div class="main">
 
-  <div class="card" style="text-align:center; padding:40px;">
-
-    <h1>Actuarial & Data Projects</h1>
-
-    <p style="color:#94a3b8;">
-      A collection of analytical projects focused on risk modeling, financial mathematics,
-      and data-driven decision making.
-    </p>
-
-  </div>
-
-  <!-- DASHBOARD PROJECT -->
+  <!-- HEADER -->
   <div class="card">
+    <h1>📊 Projects Dashboard</h1>
+    <p style="color:#94a3b8;">SaaS-style actuarial analytics workspace</p>
+  </div>
 
-    <h3>📊 Actuarial Risk Dashboard</h3>
+  <!-- KPI SECTION -->
+  <div class="kpis">
 
-    <img src="actuarial-dashboard.png" alt="Actuarial Dashboard" style="width:100%; border-radius:10px; margin:10px 0;">
+    <div class="kpi">
+      <h3>4</h3>
+      <p>Projects</p>
+    </div>
 
-    <p>
-      Designed a full actuarial dashboard analyzing insurance premiums, claims, expenses,
-      and profitability trends over time. Includes loss ratio tracking and financial KPIs.
-    </p>
+    <div class="kpi">
+      <h3>Excel</h3>
+      <p>Main Tool</p>
+    </div>
 
-    <p><strong>Key Metrics:</strong> Premiums | Claims | Profit | Loss Ratio</p>
+    <div class="kpi">
+      <h3>R</h3>
+      <p>Analytics</p>
+    </div>
 
-    <p><strong>Tools:</strong> Excel, Financial Modeling</p>
+    <div class="kpi">
+      <h3>100%</h3>
+      <p>Learning Growth</p>
+    </div>
 
   </div>
 
-  <!-- RISK MODEL -->
-  <div class="card">
+  <!-- CONTROLS -->
+  <div class="topbar">
 
-    <h3>📉 Insurance Risk Modeling</h3>
+    <input type="text" id="search" placeholder="Search projects...">
 
-    <img src="risk-model.png" alt="Risk Model Graph" style="width:100%; border-radius:10px; margin:10px 0;">
-
-    <p>
-      Developed a probabilistic model to evaluate insurance risk exposure using statistical distributions
-      and expected value theory. The model estimates potential financial loss under uncertainty.
-    </p>
-
-    <p><strong>Skills:</strong> Risk Analysis, Probability Theory, Statistical Modeling</p>
-
-    <p><strong>Tools:</strong> Excel</p>
+    <select id="filter">
+      <option value="all">All</option>
+      <option value="excel">Excel</option>
+      <option value="r">R</option>
+      <option value="stats">Statistics</option>
+      <option value="finance">Finance</option>
+    </select>
 
   </div>
 
-  <!-- FINANCIAL ANALYSIS -->
-  <div class="card">
+  <!-- PROJECT GRID -->
+  <div class="grid">
 
-    <h3>📈 Financial Data Analysis</h3>
+    <div class="card project" data-tags="excel finance stats">
+      <h3>📊 Risk Dashboard</h3>
+      <span class="tag">Excel</span>
+      <p>Insurance claims vs premiums analytics dashboard.</p>
+    </div>
 
-    <img src="financial-chart.png" alt="Financial Analysis Chart" style="width:100%; border-radius:10px; margin:10px 0;">
+    <div class="card project" data-tags="stats">
+      <h3>📉 Risk Model</h3>
+      <span class="tag">Statistics</span>
+      <p>Probability-based insurance risk model.</p>
+    </div>
 
-    <p>
-      Conducted detailed financial data analysis to identify trends, patterns, and insights.
-      Applied statistical techniques to support data-driven financial decisions.
-    </p>
+    <div class="card project" data-tags="excel r finance">
+      <h3>📈 Financial Analysis</h3>
+      <span class="tag">Excel</span>
+      <span class="tag">R</span>
+      <p>Financial dataset trends and insights.</p>
+    </div>
 
-    <p><strong>Skills:</strong> Data Analysis, Visualization, Interpretation</p>
-
-    <p><strong>Tools:</strong> Excel, R</p>
-
-  </div>
-
-  <!-- PROBABILITY SIMULATION -->
-  <div class="card">
-
-    <h3>🧮 Probability Simulations</h3>
-
-    <img src="probability-simulation.png" alt="Probability Simulation Graph" style="width:100%; border-radius:10px; margin:10px 0;">
-
-    <p>
-      Simulated probability experiments to analyze uncertainty and randomness in real-world scenarios.
-      Demonstrates understanding of stochastic processes and actuarial reasoning.
-    </p>
-
-    <p><strong>Skills:</strong> Probability, Simulation, Analytical Thinking</p>
-
-    <p><strong>Tools:</strong> Excel / R</p>
-
-  </div>
-
-  <!-- CTA -->
-  <div class="card" style="text-align:center;">
-
-    <h3>Want to see more?</h3>
-
-    <p>
-      These projects represent my growing expertise in actuarial science and data analytics.
-    </p>
-
-    <a href="cv.html">View My CV</a>
+    <div class="card project" data-tags="r stats">
+      <h3>🧮 Probability Simulation</h3>
+      <span class="tag">R</span>
+      <p>Simulation of random actuarial events.</p>
+    </div>
 
   </div>
 
 </div>
 
-<!-- FOOTER -->
-<footer>
-  © <span id="year"></span> Nicholas Kyalo | All Rights Reserved
-</footer>
-
+<!-- SCRIPT -->
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+const search = document.getElementById("search");
+const filter = document.getElementById("filter");
+const projects = document.querySelectorAll(".project");
+
+function update() {
+  const s = search.value.toLowerCase();
+  const f = filter.value;
+
+  projects.forEach(p => {
+    const text = p.textContent.toLowerCase();
+    const tags = p.dataset.tags;
+
+    const matchSearch = text.includes(s);
+    const matchFilter = f === "all" || tags.includes(f);
+
+    p.classList.toggle("hidden", !(matchSearch && matchFilter));
+  });
+}
+
+search.addEventListener("input", update);
+filter.addEventListener("change", update);
 </script>
 
 </body>
