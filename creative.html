@@ -6,7 +6,7 @@
 
 <title>Creative Works | Kyalo Analytics</title>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -42,21 +42,26 @@
   color: #94a3b8;
   font-size: 14px;
 }
+
+.play-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #60a5fa;
+  text-decoration: none;
+}
 </style>
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="logo">Kyalo Analytics</div>
-  <div class="nav-links">
-    <a href="../index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="creative.html" class="active">Creative</a>
-    <a href="cv.html">CV</a>
-  </div>
+<!-- NAVIGATION (FIXED ROOT STRUCTURE) -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="creative.html">Creative</a>
+  <a href="cv.html">CV</a>
 </nav>
 
 <!-- CONTENT -->
@@ -75,15 +80,15 @@
   <div class="play-grid">
 
     <div class="play-card">
-      <h3>Play Title 1</h3>
+      <h3>Wounds of Wonders - Part 1</h3>
       <p>A powerful story exploring youth struggles, identity, and societal expectations.</p>
-      <a href="../pdfs/woundsofwondersseason1.pdf-play1.pdf" target="_blank">Read Play</a>
+      <a href="woundsofwondersseason1.pdf" target="_blank">Read Play</a>
     </div>
 
     <div class="play-card">
-      <h3>Play Title 2</h3>
+      <h3>Season 1 - Play 2</h3>
       <p>A dramatic narrative highlighting relationships and modern social challenges.</p>
-      <a href="../pdfs/season1-play2.pdf" target="_blank">Read Play</a>
+      <a href="season1-play2.pdf" target="_blank">Read Play</a>
     </div>
 
   </div>
@@ -94,15 +99,15 @@
   <div class="play-grid">
 
     <div class="play-card">
-      <h3>Play Title 3</h3>
+      <h3>Wounds of Wonders - Part 2</h3>
       <p>A deeper exploration of societal transformation and cultural identity.</p>
-      <a href="../pdfs/woundsofwondersseason2.pdf-play1.pdf" target="_blank">Read Play</a>
+      <a href="woundsofwondersseason2.pdf" target="_blank">Read Play</a>
     </div>
 
     <div class="play-card">
-      <h3>Play Title 4</h3>
+      <h3>Season 2 - Play 2</h3>
       <p>A thought-provoking piece addressing real-world issues affecting communities today.</p>
-      <a href="../pdfs/season2-play2.pdf" target="_blank">Read Play</a>
+      <a href="season2-play2.pdf" target="_blank">Read Play</a>
     </div>
 
   </div>
@@ -119,4 +124,4 @@ document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
-</html>
+                      </html>
