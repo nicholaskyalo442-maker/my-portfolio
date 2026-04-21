@@ -8,118 +8,50 @@
 
 <link rel="stylesheet" href="../styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-/* FILTER BAR */
-.filter-bar {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.filter-bar input {
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  flex: 1;
-}
-
-.filter-bar button {
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: none;
-  background: #1e293b;
-  color: #e2e8f0;
-  cursor: pointer;
-}
-
-.filter-bar button.active {
-  background: #3b82f6;
-}
-
-/* PROJECT GRID */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background: #111827;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.tag {
-  font-size: 12px;
-  color: #60a5fa;
-  margin-bottom: 10px;
-}
-</style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="logo">Kyalo Analytics</div>
-  <div class="nav-links">
-    <a href="../index.html">Home</a>
-    <a href="projects.html" class="active">Projects</a>
-    <a href="about.html">About</a>
-    <a href="cv.html">CV</a>
-  </div>
+<!-- NAVIGATION (INSIDE /pages) -->
+<nav>
+  <a href="../index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="creative.html">Creative</a>
+  <a href="cv.html">CV</a>
 </nav>
 
 <!-- CONTENT -->
 <div class="container">
 
-  <h1>Analytics Dashboard Projects</h1>
+  <h1>Analytics Projects</h1>
 
-  <!-- FILTER -->
-  <div class="filter-bar">
-    <input type="text" id="search" placeholder="Search projects...">
-
-    <button onclick="filterProjects('all')" class="active">All</button>
-    <button onclick="filterProjects('actuarial')">Actuarial</button>
-    <button onclick="filterProjects('data')">Data</button>
-    <button onclick="filterProjects('simulation')">Simulation</button>
+  <div class="card">
+    <h3>Insurance Risk Model</h3>
+    <p>
+      Built a probability-based model to estimate insurance risk using expected value and statistical distributions.
+    </p>
   </div>
 
-  <!-- PROJECTS -->
-  <div class="project-grid" id="projects">
+  <div class="card">
+    <h3>Financial Data Analysis</h3>
+    <p>
+      Analyzed financial datasets using Excel and statistical tools to identify trends and decision patterns.
+    </p>
+  </div>
 
-    <div class="project-card" data-type="actuarial">
-      <div class="tag">Actuarial</div>
-      <h3>Insurance Risk Model</h3>
-      <p>Analyzed insurance risk using probability distributions and expected value modeling.</p>
-    </div>
+  <div class="card">
+    <h3>Probability Simulation</h3>
+    <p>
+      Simulated real-world random events to study probability distributions and outcomes.
+    </p>
+  </div>
 
-    <div class="project-card" data-type="data">
-      <div class="tag">Data</div>
-      <h3>Financial Data Analysis</h3>
-      <p>Explored financial datasets to identify trends using Excel and statistical tools.</p>
-    </div>
-
-    <div class="project-card" data-type="simulation">
-      <div class="tag">Simulation</div>
-      <h3>Probability Simulation</h3>
-      <p>Simulated random events to study distributions and real-world probability outcomes.</p>
-    </div>
-
-    <div class="project-card" data-type="actuarial">
-      <div class="tag">Actuarial</div>
-      <h3>Life Table Analysis</h3>
-      <p>Used actuarial tables to compute survival probabilities and expected present values.</p>
-    </div>
-
+  <div class="card">
+    <h3>Life Table Analysis</h3>
+    <p>
+      Applied actuarial life tables to calculate survival probabilities and expected present values.
+    </p>
   </div>
 
 </div>
@@ -131,41 +63,7 @@
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
-
-/* FILTER SYSTEM */
-let currentFilter = "all";
-
-function filterProjects(type) {
-  currentFilter = type;
-
-  document.querySelectorAll(".filter-bar button").forEach(btn => btn.classList.remove("active"));
-  event.target.classList.add("active");
-
-  applyFilters();
-}
-
-/* SEARCH + FILTER */
-document.getElementById("search").addEventListener("input", applyFilters);
-
-function applyFilters() {
-  const search = document.getElementById("search").value.toLowerCase();
-  const cards = document.querySelectorAll(".project-card");
-
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    const type = card.dataset.type;
-
-    const matchSearch = text.includes(search);
-    const matchType = currentFilter === "all" || type === currentFilter;
-
-    if (matchSearch && matchType) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
 </script>
 
 </body>
-    </html>
+</html>
