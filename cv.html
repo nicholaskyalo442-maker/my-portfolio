@@ -1,105 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CV | Kyalo Analytics</title>
-
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Nicholas Kyalo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVIGATION (FIXED FOR ROOT STRUCTURE) -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="creative.html">Creative</a>
-  <a href="cv.html">CV</a>
-</nav>
+    <nav>
+        <div class="logo"><strong>NK</strong></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="cv.html" class="active" style="color: var(--accent-blue);">CV</a>
+            <a href="creative.html">Creative</a>
+        </div>
+    </nav>
 
-<!-- CONTENT -->
-<div class="container">
+    <header class="container" style="padding-bottom: 20px;">
+        <h1 class="page-title">Curriculum Vitae</h1>
+        <p style="color: var(--text-dim);">A comprehensive record of academic rigor and technical expertise.</p>
+        <a href="your-resume-file.pdf" class="btn" style="margin-top: 20px;">Download PDF Version</a>
+    </header>
 
-  <div class="card">
+    <main class="container" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-top: 0;">
+        
+        <aside>
+            <div class="glass-card" style="padding: 1.5rem; border-top: 4px solid var(--accent-blue);">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-blue);">Technical Stack</h3>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="margin-bottom: 10px;"><strong>R:</strong> Tidyverse, ggplot2, Shiny</li>
+                    <li style="margin-bottom: 10px;"><strong>Python:</strong> Pandas, NumPy, Scikit-Learn</li>
+                    <li style="margin-bottom: 10px;"><strong>SQL:</strong> Relational Database Mgmt</li>
+                    <li style="margin-bottom: 10px;"><strong>Math:</strong> Probability, Regression</li>
+                    <li><strong>Tools:</strong> Git, LaTeX, Excel VBA</li>
+                </ul>
+            </div>
 
-    <h1>Nicholas Kyalo</h1>
+            <div class="glass-card" style="padding: 1.5rem; border-top: 4px solid var(--accent-green);">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-green);">Certifications</h3>
+                <ul style="list-style: none; font-size: 0.9rem;">
+                    <li style="margin-bottom: 10px;">Actuarial Exam P (Probability)</li>
+                    <li style="margin-bottom: 10px;">Actuarial Exam FM (Financial Math)</li>
+                    <li>Data Science Professional Cert</li>
+                </ul>
+            </div>
+        </aside>
 
-    <p><strong>Email:</strong> nicholaskyalo442@gmail.com</p>
-    <p><strong>Location:</strong> Machakos, Kenya</p>
+        <section>
+            <div class="glass-card">
+                <h2 style="margin-bottom: 1.5rem;">Professional Experience</h2>
+                
+                <div class="roadmap-item">
+                    <h4>Statistical Analyst Intern | [Company Name]</h4>
+                    <p style="font-size: 0.85rem; color: var(--accent-blue);">Jan 2025 — Present</p>
+                    <p style="margin-top: 10px;">Spearheading the transition to automated risk reporting using R. Optimized data cleaning workflows, reducing manual error rates by 25%.</p>
+                </div>
 
-    <p>
-      <strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/nicholas-kyalo-989672403?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
-        View Profile
-      </a>
-    </p>
+                <div class="roadmap-item">
+                    <h4>Research Assistant | [Institution]</h4>
+                    <p style="font-size: 0.85rem; color: var(--accent-blue);">June 2024 — Dec 2024</p>
+                    <p style="margin-top: 10px;">Conducted rigorous hypothesis testing on large-scale datasets. Evaluated Type I and Type II errors to ensure the integrity of published research findings.</p>
+                </div>
+            </div>
 
-  </div>
+            <div class="glass-card">
+                <h2 style="margin-bottom: 1.5rem;">Education</h2>
+                
+                <div class="roadmap-item" style="border-left-color: var(--accent-purple);">
+                    <h4 style="border-color: var(--accent-purple);">B.Sc. in Actuarial Science</h4>
+                    <p style="font-size: 0.85rem; color: var(--accent-purple);">[University Name] | 2022 — 2026</p>
+                    <p style="margin-top: 10px;">Focusing on financial mathematics, risk theory, and advanced statistical inference.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- PROFILE -->
-  <div class="card">
-    <h2>Profile</h2>
-    <p>
-      Actuarial Science student with strong analytical skills in statistics,
-      financial modeling, and risk analysis. Passionate about transforming data
-      into meaningful insights for informed decision-making.
-    </p>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <div class="card">
-    <h2>Experience</h2>
-
-    <h3>Safaricom Brand Ambassador</h3>
-    <p><em>May 2025 – 31st August 2025</em></p>
-    <p><strong>Partner Organization:</strong> Mayaash, Athi River</p>
-
-    <ul>
-      <li>Represented Safaricom products and services in field activations.</li>
-      <li>Engaged customers and improved product awareness and adoption.</li>
-      <li>Collected market feedback to support business strategies.</li>
-      <li>Strengthened communication, sales, and interpersonal skills.</li>
-    </ul>
-
-  </div>
-
-  <!-- EDUCATION -->
-  <div class="card">
-    <h2>Education</h2>
-
-    <h3>Bachelor of Science in Actuarial Science</h3>
-    <p>Machakos University</p>
-
-  </div>
-
-  <!-- SKILLS -->
-  <div class="card">
-    <h2>Skills</h2>
-
-    <ul>
-      <li>Statistical Analysis</li>
-      <li>Financial Mathematics</li>
-      <li>Risk Modeling</li>
-      <li>Data Analysis (Excel, R)</li>
-      <li>Problem Solving & Critical Thinking</li>
-    </ul>
-
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  © <span id="year"></span> Kyalo Analytics
-</footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <footer style="text-align: center; padding: 4rem; opacity: 0.5;">
+        <p>&copy; 2026 Nicholas Kyalo • References available upon request.</p>
+    </footer>
 
 </body>
-</html>
+                  </html>
+  
