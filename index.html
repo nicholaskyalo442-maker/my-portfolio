@@ -1,28 +1,49 @@
-<nav>
-    <div class="logo"><strong>NK</strong></div>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="cv.html">CV</a>
-        <a href="creative.html">Creative</a>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kyalo Analytics | Actuarial Intelligence</title>
+
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="saas-nav">
+  <div class="logo">Kyalo Analytics</div>
+  <div class="links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="creative.html">Creative</a>
+    <a href="cv.html">CV</a>
+  </div>
 </nav>
 
-<header class="container" style="text-align: center;">
-    <img src="dp.jpg" alt="Nicholas Kyalo" style="width:200px; height:200px; border-radius:50%; object-fit: cover; border: 3px solid var(--accent-blue); margin-bottom: 2rem;">
-    <h1 class="page-title">Nicholas Kyalo</h1>
-    <p style="font-size: 1.5rem; color: var(--text-dim);">Bridging Actuarial Rigor with Strategic Innovation.</p>
-    
-    <div class="glass-card" style="margin-top: 4rem; border-top: 4px solid var(--accent-green);">
-        <h3>Future Roadmap: Vision 2027</h3>
-        <div class="roadmap-item" style="margin-top: 2rem;">
-            <h4>Q4 2026: Advanced Risk Specialization</h4>
-            <p>Integrating deep learning models with traditional actuarial risk frameworks.</p>
-        </div>
-        <div class="roadmap-item">
-            <h4>2027: Emerging Market Strategy</h4>
-            <p>Leading data-driven expansion initiatives in high-growth financial sectors.</p>
-        </div>
+<div class="container">
+
+  <div class="hero-card">
+    <img src="profile.jpg" class="dp">
+    <h1>Nicholas Kyalo</h1>
+    <h2>Actuarial Science • Data • Risk Analysis</h2>
+    <p class="tagline">Transforming data into insight and decisions.</p>
+
+    <div class="cta">
+      <a href="projects.html">Explore Work</a>
+      <a href="cv.html">View CV</a>
     </div>
-</header>
+  </div>
+
+</div>
+
+<footer>© <span id="year"></span> Kyalo Analytics</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+    </html>
