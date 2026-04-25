@@ -1,20 +1,62 @@
-<nav> </nav>
+<!-- ONLY KEY PARTS SHOWN (keep nav same as above) -->
 
-<section class="container">
-    <h1 class="page-title">Selected Projects</h1>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        
-        <div class="glass-card">
-            <h4 style="color: var(--accent-blue);">Statistical Modeling</h4>
-            <h3>Risk Assessment Engine</h3>
-            <p>A comprehensive analysis of Type I & II errors in high-variance financial datasets using R.</p>
-        </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <div class="glass-card">
-            <h4 style="color: var(--accent-purple);">Automation</h4>
-            <h3>Predictive Data Pipeline</h3>
-            <p>Developing Python workflows to automate actuarial reporting and data cleaning.</p>
-        </div>
+<div class="card">
+<h2>Actuarial Dashboard</h2>
+<canvas id="riskChart"></canvas>
+</div>
 
-    </div>
-</section>
+<div class="card">
+<h2>Actuarial Tools</h2>
+<input id="interest" value="0.05">
+<button onclick="calculateEPV()">EPV</button>
+<p id="epvResult"></p>
+</div>
+
+<div class="card">
+<h2>Life Table</h2>
+<input id="lx0" value="100000">
+<input id="qx" value="0.02">
+<input id="yearsLT" value="20">
+<button onclick="generateFullLifeTable()">Generate</button>
+
+<table id="lifeTable">
+<thead><tr><th>x</th><th>lx</th><th>dx</th><th>Lx</th><th>Tx</th><th>ex</th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+
+<script>
+function calculateEPV(){
+let i=0.05,n=20;
+let v=1/(1+i);
+document.getElementById("epvResult").innerText=(Math.pow(v,n)).toFixed(4);
+}
+
+function generateFullLifeTable(){
+let lx=100000,q=0.02,years=20;
+let table=[],T=0;
+
+for(let x=0;x<=years;x++){
+let dx=lx*q;
+let Lx=lx-dx/2;
+table.push({x,lx,dx,Lx});
+lx-=dx;
+}
+
+for(let i=table.length-1;i>=0;i--){
+T+=table[i].Lx;
+table[i].Tx=T;
+table[i].ex=T/table[i].lx;
+}
+
+let body="";
+table.forEach(r=>{
+body+=`<tr><td>${r.x}</td><td>${r.lx.toFixed(0)}</td>
+<td>${r.dx.toFixed(0)}</td><td>${r.Lx.toFixed(0)}</td>
+<td>${r.Tx.toFixed(0)}</td><td>${r.ex.toFixed(2)}</td></tr>`;
+});
+document.querySelector("#lifeTable tbody").innerHTML=body;
+}
+    </script>
