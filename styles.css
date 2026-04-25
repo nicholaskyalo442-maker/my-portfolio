@@ -1,100 +1,138 @@
+/* --- Professional 2026 Portfolio Styles --- */
+
+:root {
+    --primary-color: #1a3a5f;    /* Deep Professional Blue */
+    --accent-color: #0070f3;     /* Action Blue */
+    --text-main: #2d3748;        /* Slate Gray */
+    --text-muted: #718096;
+    --bg-light: #f7fafc;
+    --white: #ffffff;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #e2e8f0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: rgba(15,23,42,0.7);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
+/* Header & Intro */
+header {
+    text-align: center;
+    padding: 4rem 1rem;
 }
 
-.logo {
-  font-weight: 700;
-  color: #60a5fa;
+header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
 }
 
-.nav-links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #cbd5f5;
+header p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 400;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
+/* Projects Section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-.dp {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  border: 3px solid #3b82f6;
+.project-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
 }
 
-h1 {
-  font-size: 42px;
-  background: linear-gradient(90deg,#60a5fa,#a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border-color: var(--accent-color);
 }
 
-.tagline {
-  margin-top: 10px;
-  color: #94a3b8;
+.project-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
 }
 
-/* BUTTONS */
+.project-tag {
+    display: inline-block;
+    background: #ebf4ff;
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* Skills Table/List */
+.skills-section {
+    margin-top: 5rem;
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th {
+    text-align: left;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-light);
+    padding: 1rem;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--bg-light);
+    font-size: 0.95rem;
+}
+
+/* Buttons & Links */
 .btn {
-  display: inline-block;
-  margin: 15px 10px;
-  padding: 12px 18px;
-  background: #3b82f6;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+    margin-top: 1rem;
 }
 
-.btn.secondary {
-  background: #1e293b;
+.btn:hover {
+    background-color: var(--accent-color);
 }
 
-/* FEATURES */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 20px;
-  padding: 40px;
-}
-
-.card {
-  background: #111827;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #94a3b8;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body { padding: 1rem; }
+    header h1 { font-size: 2rem; }
 }
