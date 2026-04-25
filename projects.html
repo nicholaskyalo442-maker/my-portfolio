@@ -1,69 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<nav> </nav>
 
-<title>Projects | Kyalo Analytics</title>
+<section class="container">
+    <h1 class="page-title">Selected Projects</h1>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        
+        <div class="glass-card">
+            <h4 style="color: var(--accent-blue);">Statistical Modeling</h4>
+            <h3>Risk Assessment Engine</h3>
+            <p>A comprehensive analysis of Type I & II errors in high-variance financial datasets using R.</p>
+        </div>
 
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+        <div class="glass-card">
+            <h4 style="color: var(--accent-purple);">Automation</h4>
+            <h3>Predictive Data Pipeline</h3>
+            <p>Developing Python workflows to automate actuarial reporting and data cleaning.</p>
+        </div>
 
-<body>
-
-<!-- NAVIGATION (FIXED FOR ROOT STRUCTURE) -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="creative.html">Creative</a>
-  <a href="cv.html">CV</a>
-</nav>
-
-<!-- CONTENT -->
-<div class="container">
-
-  <h1>Analytics Projects</h1>
-
-  <div class="card">
-    <h3>Insurance Risk Model</h3>
-    <p>
-      Built a probability-based model to estimate insurance risk using expected value and statistical distributions.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Financial Data Analysis</h3>
-    <p>
-      Analyzed financial datasets using Excel and statistical tools to identify trends and decision patterns.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Probability Simulation</h3>
-    <p>
-      Simulated real-world random events to study probability distributions and outcomes.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Life Table Analysis</h3>
-    <p>
-      Applied actuarial life tables to calculate survival probabilities and expected present values.
-    </p>
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  © <span id="year"></span> Kyalo Analytics
-</footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+    </div>
+</section>
