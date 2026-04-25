@@ -1,79 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Kyalo Analytics | Actuarial Intelligence</title>
-
-<meta name="description" content="Kyalo Analytics - Actuarial Science, Data Analytics, Risk Modeling Portfolio.">
-
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Kyalo | Actuarial & Statistical Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVIGATION (FIXED ROOT STRUCTURE) -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="creative.html">Creative</a>
-  <a href="cv.html">CV</a>
-</nav>
+    <header>
+        <h1>Nicholas Kyalo</h1>
+        <p>Actuarial Scientist | Statistical Researcher | Data Modeler</p>
+        <div class="contact-links">
+            <a href="mailto:nicholaskyalo442@gmail.com" class="btn">Email Me</a>
+            <a href="https://github.com/nicholaskyalo442-maker" target="_blank" class="btn btn-dark">GitHub</a>
+            <a href="#" target="_blank" class="btn btn-blue">LinkedIn</a>
+        </div>
+    </header>
 
-<!-- HERO -->
-<div class="container">
+    <section id="profile">
+        <div class="card intro-card">
+            <h2>Professional Summary</h2>
+            <p>
+                Specializing in <strong>Actuarial Science</strong> with a focus on high-integrity statistical methodology. 
+                I bridge the gap between raw data and risk assessment by utilizing rigorous <strong>Hypothesis Testing</strong> 
+                and predictive modeling. Expert in identifying and mitigating <strong>Type I and Type II errors</strong> 
+                to ensure model reliability in financial and research contexts.
+            </p>
+        </div>
+    </section>
 
-  <div class="card" style="text-align:center; padding:60px;">
+    <section id="projects">
+        <h2 class="section-title">Strategic Projects</h2>
+        <div class="projects-container">
+            
+            <article class="project-card">
+                <span class="tag">R & Statistics</span>
+                <h3>Advanced Risk & Hypothesis Modeling</h3>
+                <p><strong>The Challenge:</strong> Evaluating complex datasets where traditional models failed to account for non-normal distributions and high variance.</p>
+                <p><strong>The Solution:</strong> Developed a robust testing framework in R, applying multivariate regression and rigorous p-value validation to ensure 95% confidence intervals.</p>
+                <a href="https://github.com/nicholaskyalo442-maker" class="project-link">View Documentation →</a>
+            </article>
 
-    <img src="profile.jpg" alt="Profile"
-         style="width:120px;height:120px;border-radius:50%;
-         object-fit:cover;border:3px solid #3b82f6;margin-bottom:15px;">
+            <article class="project-card">
+                <span class="tag">Python</span>
+                <h3>Automated Data Analytics Pipeline</h3>
+                <p><strong>The Challenge:</strong> Inefficient manual data cleaning processes leading to high potential for human error in actuarial reporting.</p>
+                <p><strong>The Solution:</strong> Built a Python-based automation tool (Pandas/NumPy) that standardized raw inputs, reducing processing time by 40% while increasing data integrity.</p>
+                <a href="https://github.com/nicholaskyalo442-maker" class="project-link">Explore Code →</a>
+            </article>
 
-    <h1>Kyalo Analytics</h1>
+            <article class="project-card">
+                <span class="tag">Financial Math</span>
+                <h3>Probability-Based Forecast Models</h3>
+                <p><strong>The Challenge:</strong> Simulating long-term financial outcomes for risk assessment under volatile market conditions.</p>
+                <p><strong>The Solution:</strong> Created a Monte Carlo simulation engine using Excel VBA and R to model potential loss ratios and capital requirements.</p>
+                <a href="https://github.com/nicholaskyalo442-maker" class="project-link">View Project →</a>
+            </article>
 
-    <h2>Actuarial Intelligence Platform</h2>
+        </div>
+    </section>
 
-    <p style="color:#94a3b8; margin-top:10px;">
-      Turning data into insight, and insight into decisions.
-    </p>
+    <section id="skills">
+        <div class="card">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Mathematics & Stats</h3>
+                    <ul>
+                        <li>Hypothesis Testing</li>
+                        <li>Probability Theory</li>
+                        <li>Regression Analysis</li>
+                        <li>Error Type Analysis</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>R (Tidyverse)</li>
+                        <li>Python (Scikit-Learn)</li>
+                        <li>SQL (PostgreSQL)</li>
+                        <li>Excel (VBA)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Domain Knowledge</h3>
+                    <ul>
+                        <li>Actuarial Science</li>
+                        <li>Risk Management</li>
+                        <li>Technical Reporting</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div style="margin-top:20px;">
-      <!-- FIXED LINKS -->
-      <a href="projects.html">Launch Dashboard</a>
-      <a href="cv.html">View Profile</a>
-    </div>
-
-  </div>
-
-  <!-- FEATURES -->
-  <div class="card">
-    <h3>📊 Risk Analytics</h3>
-    <p>Actuarial models for insurance and financial systems.</p>
-  </div>
-
-  <div class="card">
-    <h3>📈 Data Insights</h3>
-    <p>Statistical analysis using Excel, R, and modeling tools.</p>
-  </div>
-
-  <div class="card">
-    <h3>🧠 Predictive Modeling</h3>
-    <p>Forecasting trends using probability and data science.</p>
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-  © <span id="year"></span> Kyalo Analytics
-</footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <footer>
+        <p>&copy; 2026 Nicholas Kyalo | Built for Professional Excellence</p>
+    </footer>
 
 </body>
-</html>
+                                  </html>
+                  
