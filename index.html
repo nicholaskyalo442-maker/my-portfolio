@@ -1,49 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Kyalo | Portfolio</title>
 
-<title>Kyalo Analytics | Actuarial Intelligence</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: #0b1320;
+            color: white;
+        }
 
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        header {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #0a3d62, #1e6091);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.85;
+            margin-top: 10px;
+        }
+
+        nav {
+            margin-top: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            padding: 8px 14px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #0a3d62;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: #111a2e;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #4ea8de;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: #16223b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #74c0fc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+    </style>
 </head>
 
 <body>
 
-<nav class="saas-nav">
-  <div class="logo">Kyalo Analytics</div>
-  <div class="links">
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="creative.html">Creative</a>
-    <a href="cv.html">CV</a>
-  </div>
-</nav>
+<header>
+    <h1>Nicholas Kyalo</h1>
+    <p>Actuarial Science Student | Risk Analyst in Training | Data & Financial Systems Thinker</p>
+
+    <nav>
+        <a href="about.html">About</a>
+        <a href="cv.html">CV</a>
+        <a href="#projects">Projects</a>
+        <a href="mailto:nicholaskyalo442@gmail.com">Contact</a>
+    </nav>
+</header>
 
 <div class="container">
 
-  <div class="hero-card">
-    <img src="profile.jpg" class="dp">
-    <h1>Nicholas Kyalo</h1>
-    <h2>Actuarial Science • Data • Risk Analysis</h2>
-    <p class="tagline">Transforming data into insight and decisions.</p>
-
-    <div class="cta">
-      <a href="projects.html">Explore Work</a>
-      <a href="cv.html">View CV</a>
+    <div class="section">
+        <h2>Profile Snapshot</h2>
+        <p>
+            I specialize in actuarial science, financial mathematics, and risk modelling with hands-on experience
+            in data analysis (Python, SQL, Excel) and applied systems thinking. My focus is building solutions that
+            reduce uncertainty in financial and agricultural systems.
+        </p>
     </div>
-  </div>
+
+    <div class="section" id="projects">
+        <h2>Key Projects</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Smart Shamba</h3>
+                <p>Actuarial-based agricultural risk model using risk pooling and pricing to address crop loss.</p>
+            </div>
+
+            <div class="card">
+                <h3>Timetable Optimization</h3>
+                <p>Excel-based system that eliminated timetable collisions across the faculty and improved efficiency.</p>
+            </div>
+
+            <div class="card">
+                <h3>Agricultural Insurance Model</h3>
+                <p>Designing a telematics-based insurance system for improved risk pricing and monitoring.</p>
+            </div>
+
+            <div class="card">
+                <h3>Engineering Prototype</h3>
+                <p>Energy-efficient vacuum cleaner model using mathematical optimization (2nd place Kenya Science Fair).</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Core Strengths</h2>
+        <p>
+            Risk Analysis • Financial Modelling • Data Analytics • Leadership • Problem Solving • Systems Thinking
+        </p>
+    </div>
 
 </div>
 
-<footer>© <span id="year"></span> Kyalo Analytics</footer>
-
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<footer>
+    © 2026 Nicholas Kyalo | Built for actuarial and financial analytics opportunities
+</footer>
 
 </body>
-    </html>
+</html>
